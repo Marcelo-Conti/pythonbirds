@@ -74,8 +74,8 @@ def animar(tela, camada_de_atores, fase, passo=0.01, delta_t=0.04):
             angulo_rad = math.radians(-angulo)
 
             camada_de_atores.create_line(52, 493, 52 + tamanho_seta * math.cos(angulo_rad),
-                                         493 + tamanho_seta * math.sin(angulo_rad), width=1.5)
-            camada_de_atores.create_text(35, 493, text="%d°" % angulo)
+                                         493 + tamanho_seta * math.sin(angulo_rad), width=1.5, fill = 'white')
+            camada_de_atores.create_text(35, 493, text="%d°" % angulo, fill = 'white')
             for ponto in fase.calcular_pontos(tempo):
                 plotar(camada_de_atores, ponto)
             tempo_gasto_com_animacao= round((time.time() - tempo_de_inicio_de_animacao)*1000) # Trans
@@ -129,7 +129,7 @@ def animar(tela, camada_de_atores, fase, passo=0.01, delta_t=0.04):
 
 
 def rodar_fase(fase):
-    root.title("Python Birds")
+    root.title("DFC Birds")
     root.geometry("800x600")
     root.resizable(0, 0)
     stage = Canvas(root, width=800, height=ALTURA_DA_TELA)
